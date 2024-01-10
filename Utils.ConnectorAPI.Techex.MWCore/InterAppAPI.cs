@@ -39,6 +39,11 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
         /// Delete
         /// </summary>
         Delete,
+
+        /// <summary>
+        /// Update
+        /// </summary>
+        Update
     }
 
     /// <summary>
@@ -60,7 +65,7 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
     public class RequestMessage : Message
     {
         /// <summary>
-        /// Gets or sets the Action to perform (Create/Delete).
+        /// Gets or sets the Action to perform (Create/Delete/Update).
         /// </summary>
         public InterAppAction Action { get; set; }
 
@@ -70,7 +75,7 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
         public InterAppResourceType Type { get; set; }
 
         /// <summary>
-        /// Gets or sets Edge name for stream or Edge ID for Input/Output.
+        /// Gets or sets Edge name for Stream or Edge ID for Input/Output.
         /// </summary>
         public string Edge { get; set; }
 
@@ -86,7 +91,7 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
     public class ResponseMessage : Message
     {
         /// <summary>
-        /// Gets or sets a value indicating whether the resource creation/deletion was successful.
+        /// Gets or sets a value indicating whether the resource creation/deletion/update was successful.
         /// </summary>
         public bool SuccessfulCreation { get; set; }
 
