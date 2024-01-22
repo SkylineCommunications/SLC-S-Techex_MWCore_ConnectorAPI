@@ -76,11 +76,13 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
 
         /// <summary>
         /// Gets or sets Edge name for Stream or Edge ID for Input/Output.
+        /// Not required when the Action is Update.
         /// </summary>
         public string Edge { get; set; }
         
         /// <summary>
-        /// Gets or sets the Stream, Input or Output primary key that needs to be updated. Only required when the Action is Update.
+        /// Gets or sets the Stream, Input or Output DataMiner primary key that needs to be updated. 
+        /// Only required when the Action is Update.
         /// </summary>
         public string ResourceToUpdate {get; set;}
 
