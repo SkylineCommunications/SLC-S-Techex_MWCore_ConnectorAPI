@@ -17,7 +17,7 @@
 		<Authors>SkylineCommunications</Authors>
 		<Company>Skyline Communications</Company>
 		<Description>This NuGet package contains assemblies that enhance development of InterApp communication for the Techex MWCore protocol.
-This contains all the necessary models to generate messages for creating or deleting Streams/Inputs/Outputs on MWCore.</Description>
+[Minimum Required Techex MWCore Protocol: 1.0.4.2]</Description>
 		<RepositoryUrl>https://github.com/SkylineCommunications/SLC-S-Techex_MWCore_ConnectorAPI.git</RepositoryUrl>
 	</PropertyGroup>
 
@@ -28,6 +28,7 @@ This contains all the necessary models to generate messages for creating or dele
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="Skyline.DataMiner.Core.InterAppCalls.Common" Version="1.0.0.2" />
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	  <PackageReference Include="Skyline.DataMiner.Core.InterAppCalls.Common" Version="1.0.1.1" />
 	</ItemGroup>
 </Project>

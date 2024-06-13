@@ -24,8 +24,38 @@ At Skyline Communications, we deal in world-class solutions that are deployed by
 
 <!-- Uncomment below and add more info to provide more information about how to use this package. -->
 ## Getting Started
+Here's a quick guide to help you get started with the ConnectorAPI Techex MWCore NuGet package:
 
-Via the InterApp is possible to performe following actions on streams, inputs and outputs:
+
+Create an MWCoreInterAppCalls object to get started.
+```csharp
+// For Automation Scripts
+var exampleElement = new MWCoreInterAppCalls(engine.GetUserConnection(), agentId, elementId);
+
+// For Connectors
+var exampleElement = new MWCoreInterAppCalls(protocol.SLNet.RawConnection, agentId, elementId);
+```
+
+
+Create the message you need to send.
+```csharp
+var request = new MWCoreRequest
+{
+	Action = RequestAction.Create,
+    Type = InterAppResourceType.Stream,
+    EdgeName = "MWCoreEdge",
+    Body = "Stream JSON configuration",
+};
+```
+
+Send you message to the element.
+```csharp
+var response = exampleElement.SendSingleResponseMessage(request);
+```
+
+## Available Actions
+
+Via the InterApp is possible to perform following actions on streams, sources and outputs:
 - Create
 - Delete
 - Update
@@ -38,17 +68,25 @@ In order to create a stream via InterApp, the request message must contain these
 
 - ***Action:*** Create action value.
 - ***Type:*** Stream type value.
-- ***Edge:*** Edge name where the stream should be created.
-- ***Body:*** Stream configuration json. 
+- ***EdgeName:*** Edge name where the stream should be created.
+- ***EdgeID:*** Edge ID where the stream should be created.
+- ***Body:*** Stream configuration JSON. 
 
-#### `Input`
+> **Note**
+> Only one of the EdgeName or EdgeID properties is required to be filled in.
+ 
+#### `Source`
 
-In order to create an input via InterApp, the request message must contain these properties and values:
+In order to create an Source via InterApp, the request message must contain these properties and values:
 
 - ***Action:*** Create action value.
-- ***Type:*** Input type value.
-- ***Edge:*** Edge ID where the input should be created.
-- ***Body:*** Input configuration json. 
+- ***Type:*** Source type value.
+- ***EdgeName:*** Edge name where the source should be created.
+- ***EdgeID:*** Edge ID where the source should be created.
+- ***Body:*** Source configuration JSON. 
+
+> **Note**
+> Only one of the EdgeName or EdgeID properties is required to be filled in.
 
 #### `Output`
 
@@ -56,8 +94,12 @@ In order to create an output via InterApp, the request message must contain thes
 
 - ***Action:*** Create action value.
 - ***Type:*** Output type value.
-- ***Edge:*** Edge ID where the output should be created.
-- ***Body:*** Ouput configuration json. 
+- ***EdgeName:*** Edge name where the output should be created.
+- ***EdgeID:*** Edge ID where the output should be created.
+- ***Body:*** Output configuration JSON. 
+
+> **Note**
+> Only one of the EdgeName or EdgeID properties is required to be filled in.
 
 ### Delete Action
 
@@ -69,13 +111,13 @@ In order to delete a stream via InterApp, the request message must contain these
 - ***Type:*** Stream type value.
 - ***Body:*** DataMiner stream display key (Can be found in the Streams table).
 
-#### `Input`
+#### `Source`
 
-In order to delete an input via InterApp, the request message must contain these properties and values:
+In order to delete an Source via InterApp, the request message must contain these properties and values:
 
 - ***Action:*** Delete action value.
-- ***Type:*** Input type value.
-- ***Body:*** DataMiner input display key (Can be found in the Input Sources table).
+- ***Type:*** Source type value.
+- ***Body:*** DataMiner Source display key (Can be found in the Sources table).
 
 #### `Output`
 
@@ -94,16 +136,16 @@ In order to update a stream via InterApp, the request message must contain these
 - ***Action:*** Update action value.
 - ***Type:*** Stream type value.
 - ***ResourceToUpdate:*** DataMiner stream primary key (Can be found in the Streams table).
-- ***Body:*** Stream configuration json. 
+- ***Body:*** Stream configuration JSON. 
 
-#### `Input`
+#### `Source`
 
-In order to update an input via InterApp, the request message must contain these properties and values:
+In order to update an Source via InterApp, the request message must contain these properties and values:
 
 - ***Action:*** Update action value.
-- ***Type:*** Input type value.
-- ***ResourceToUpdate:*** DataMiner input primary key (Can be found in the Input Sources table).
-- ***Body:*** Input configuration json. 
+- ***Type:*** Source type value.
+- ***ResourceToUpdate:*** DataMiner source primary key (Can be found in the Sources table).
+- ***Body:*** Source configuration JSON. 
 
 #### `Output`
 
@@ -112,13 +154,13 @@ In order to update an output via InterApp, the request message must contain thes
 - ***Action:*** Update action value.
 - ***Type:*** Output type value.
 - ***ResourceToUpdate:*** DataMiner output primary key (Can be found in the Outputs table).
-- ***Body:***  Ouput configuration json.
+- ***Body:***  Output configuration JSON.
 
 ### Response
 
 For every request send the MWCore element sends a response back containing these properties and values:
 
-- ***SuccessfulCreation:*** True if the request was successful or False otherwise.
-- ***Type:*** Requested resource type value (Stream, Input, Output).
-- ***Resource:*** Requested resource dataminer display key.
+- ***Successful:*** True if the request was successful or False otherwise.
+- ***Type:*** Requested resource type value (Stream, Source, Output).
+- ***Resource:*** Requested resource DataMiner display key.
 - ***Error:*** Shows the error message for the unsuccessful request.
