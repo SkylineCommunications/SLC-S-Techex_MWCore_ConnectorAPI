@@ -2,7 +2,7 @@
 
 using Newtonsoft.Json;
 
-namespace Utils.ConnectorAPI.Techex.MWCore.Models
+namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.Models
 {
     /// <summary>
     /// Model to represent the SRT Output
@@ -141,7 +141,7 @@ namespace Utils.ConnectorAPI.Techex.MWCore.Models
 
         /// <summary>
         /// Indicates whether the type is 'Listener' or 'Push'.
-        /// <see cref="SRTOutputType"/>
+        /// <see cref="SrtOutputType"/>
         /// </summary>
         [JsonProperty("type")]
         public int Type { get; set; }

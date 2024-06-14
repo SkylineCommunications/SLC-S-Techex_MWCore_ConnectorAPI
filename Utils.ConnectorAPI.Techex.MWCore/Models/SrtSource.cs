@@ -2,7 +2,7 @@
 
 using Newtonsoft.Json;
 
-namespace Utils.ConnectorAPI.Techex.MWCore.Models
+namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.Models
 {
     /// <summary>
     /// Model to represent the SRT Source
@@ -180,7 +180,7 @@ namespace Utils.ConnectorAPI.Techex.MWCore.Models
 
         /// <summary>
         /// Indicates whether the type is 'Listener' or 'Push'.
-        /// Note that this option is only available for Source Sources using the SRT protocol. <see cref="SRTSourceType"/>
+        /// Note that this option is only available for Source Sources using the SRT protocol. <see cref="SrtSourceType"/>
         /// </summary>
         [JsonProperty("type")]
         public int Type { get; set; }

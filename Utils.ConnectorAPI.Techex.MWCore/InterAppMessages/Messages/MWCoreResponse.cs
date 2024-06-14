@@ -1,8 +1,8 @@
 ﻿// Ignore Spelling: Utils Techex App
 
-namespace Utils.ConnectorAPI.Techex.MWCore.InterAppMessages.Messages
+namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages.Messages
 {
-    using Utils.ConnectorAPI.Techex.MWCore.Enums;
+    using Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore;
 
     /// <summary>
 	/// InterApp Message that represent the response from the request made.
@@ -22,11 +22,17 @@ namespace Utils.ConnectorAPI.Techex.MWCore.InterAppMessages.Messages
         /// <summary>
         /// Gets or sets the Type of resource (Stream/Input/Output).
         /// </summary>
-        public MWCoreResourceType Type { get; set; }
+        public InterAppResourceType Type { get; set; }
 
         /// <summary>
         /// Gets or sets the reason the action failed.
         /// </summary>
         public string Error { get; set; }
+
+        /// <summary>
+        /// Indicates if the InterApp Call was successful or not
+        /// </summary>
+        public bool IsSuccessful()
+        { return Successful; }
     }
 }

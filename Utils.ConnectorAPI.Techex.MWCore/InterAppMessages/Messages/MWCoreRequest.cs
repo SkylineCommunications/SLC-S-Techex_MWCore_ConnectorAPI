@@ -1,8 +1,8 @@
 ﻿// Ignore Spelling: Utils Techex App
 
-namespace Utils.ConnectorAPI.Techex.MWCore.InterAppMessages.Messages
+namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages.Messages
 {
-    using Utils.ConnectorAPI.Techex.MWCore.Enums;
+    using Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore;
 
     /// <summary>
     /// InterApp Message that will execute the request made to MWCore.
@@ -12,12 +12,12 @@ namespace Utils.ConnectorAPI.Techex.MWCore.InterAppMessages.Messages
         /// <summary>
         /// Gets or sets the Action to perform (Create/Delete/Update).
         /// </summary>
-        public RequestAction Action { get; set; }
+        public InterAppAction Action { get; set; }
 
         /// <summary>
         /// Gets or sets the Type of resource (Stream/Input/Output).
         /// </summary>
-        public MWCoreResourceType Type { get; set; }
+        public InterAppResourceType Type { get; set; }
 
         /// <summary>
         /// Gets or sets Edge name. Only one of the EdgeName or EdgeID properties is required to be filled in.

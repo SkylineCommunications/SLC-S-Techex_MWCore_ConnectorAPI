@@ -2,7 +2,7 @@
 
 using Newtonsoft.Json;
 
-namespace Utils.ConnectorAPI.Techex.MWCore.Models
+namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.Models
 {
     /// <summary>
     /// Basic Output model. (Without options configuration)

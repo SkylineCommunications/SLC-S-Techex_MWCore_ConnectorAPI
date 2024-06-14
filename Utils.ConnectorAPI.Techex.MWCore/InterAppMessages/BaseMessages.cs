@@ -1,9 +1,9 @@
 ﻿// Ignore Spelling: Utils Techex App
 
-namespace Utils.ConnectorAPI.Techex.MWCore.InterAppMessages
+namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages
 {
     using Skyline.DataMiner.Core.InterAppCalls.Common.CallSingle;
-    using Utils.ConnectorAPI.Techex.MWCore.Enums;
+    using Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore;
 
     /// <summary>
     /// Represents an InterApp Message that a Techex MWCore element can receive.
@@ -42,12 +42,12 @@ namespace Utils.ConnectorAPI.Techex.MWCore.InterAppMessages
         /// <summary>
         /// Gets or sets the Action to perform (Create/Delete/Update).
         /// </summary>
-        RequestAction Action { get; set; }
+        InterAppAction Action { get; set; }
 
         /// <summary>
         /// Gets or sets the Type of resource (Stream/Input/Output).
         /// </summary>
-        MWCoreResourceType Type { get; set; }
+        InterAppResourceType Type { get; set; }
 
         /// <summary>
         /// Gets or sets Edge name. Only one of the EdgeName or EdgeID properties is required to be filled in.
@@ -79,11 +79,6 @@ namespace Utils.ConnectorAPI.Techex.MWCore.InterAppMessages
     public interface IMWCoreResponse : IMWCoreInterAppMessage
     {
         /// <summary>
-		/// Indicates if the InterApp Call was successful or not
-		/// </summary>
-        bool Successful { get; set; }
-
-        /// <summary>
         /// Gets or sets the resource display key.
         /// </summary>
         string Resource { get; set; }
@@ -91,11 +86,16 @@ namespace Utils.ConnectorAPI.Techex.MWCore.InterAppMessages
         /// <summary>
         /// Gets or sets the Type of resource (Stream/Input/Output).
         /// </summary>
-        MWCoreResourceType Type { get; set; }
+        InterAppResourceType Type { get; set; }
 
         /// <summary>
         /// Gets or sets the reason the action failed.
         /// </summary>
         string Error { get; set; }
+
+        /// <summary>
+		/// Indicates if the InterApp Call was successful or not
+		/// </summary>
+        bool IsSuccessful();
     }
 }

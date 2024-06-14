@@ -1,26 +1,72 @@
-﻿// Ignore Spelling: Utils Techex App
+﻿// Ignore Spelling: Api Utils Techex
 
-namespace Utils.ConnectorAPI.Techex.MWCore.InterAppMessages
+namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
 {
     using System;
     using System.Collections.Generic;
     using Skyline.DataMiner.Core.InterAppCalls.Common.CallSingle;
-    using Utils.ConnectorAPI.Techex.MWCore.InterAppMessages.Messages;
+    using Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages;
+    using Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages.Messages;
 
     /// <summary>
-    /// Static class holding the types of the InterApp Messages.
+    /// Resource type
     /// </summary>
-    public static class Types
+    public enum InterAppResourceType
     {
         /// <summary>
-        /// Gets a list of all the supported InterApp Message Types.
+        /// Stream
         /// </summary>
-        public static List<Type> KnownTypes { get; } = new List<Type>
+        Stream,
+
+        /// <summary>
+        /// Input
+        /// </summary>
+        Input,
+
+        /// <summary>
+        /// Output
+        /// </summary>
+        Output,
+    }
+
+    /// <summary>
+    /// Actions possible to perform on MWCore.
+    /// </summary>
+    public enum InterAppAction
+    {
+        /// <summary>
+        /// Create.
+        /// </summary>
+        Create,
+
+        /// <summary>
+        /// Delete
+        /// </summary>
+        Delete,
+
+        /// <summary>
+        /// Update
+        /// </summary>
+        Update
+    }
+
+    /// <summary>
+    /// InterApp API that contains all the generic information.
+    /// </summary>
+    public static class InterAppApi
+    {
+        private static readonly List<Type> knownTypesValue = new List<Type>
         {
-			// Example Messages
-			typeof(GenericInterAppMessage<MWCoreRequest>),
+            typeof(RequestMessage),
+            typeof(ResponseMessage),
+            typeof(GenericInterAppMessage<MWCoreRequest>),
             typeof(GenericInterAppMessage<MWCoreResponse>),
         };
+
+        /// <summary>
+        ///  A list of all the possible Message classes, necessary for the default background serializer.
+        /// </summary>
+        public static List<Type> KnownTypes { get => knownTypesValue; }
 
         /// <summary>
         /// Converts an <see cref="IMWCoreRequest"/> message to a <see cref="Message"/> object.

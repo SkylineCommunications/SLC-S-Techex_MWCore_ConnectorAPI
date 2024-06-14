@@ -1,6 +1,6 @@
 ﻿// Ignore Spelling: Api Utils Techex App
 
-namespace Utils.ConnectorAPI.Techex.MWCore
+namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
 {
     using System;
     using System.Collections.Generic;
@@ -31,8 +31,8 @@ namespace Utils.ConnectorAPI.Techex.MWCore
         {
             IInterAppCall myCommands = InterAppCallFactory.CreateNew();
             myCommands.ReturnAddress = new ReturnAddress(AgentId, ElementId, Constants.InterAppResponsePID);
-            myCommands.Messages.AddMessage(messages.Select(Types.ToMessage).ToArray());
-            myCommands.Send(SLNetConnection, AgentId, ElementId, Constants.InterAppReceiverPID, Types.KnownTypes);
+            myCommands.Messages.AddMessage(messages.Select(InterAppApi.ToMessage).ToArray());
+            myCommands.Send(SLNetConnection, AgentId, ElementId, Constants.InterAppReceiverPID, InterAppApi.KnownTypes);
         }
 
         /// <inheritdoc/>
@@ -46,9 +46,9 @@ namespace Utils.ConnectorAPI.Techex.MWCore
 
             IInterAppCall myCommands = InterAppCallFactory.CreateNew();
             myCommands.ReturnAddress = new ReturnAddress(AgentId, ElementId, Constants.InterAppResponsePID);
-            myCommands.Messages.AddMessage(messages.Select(Types.ToMessage).ToArray());
-            var internalResults = myCommands.Send(SLNetConnection, AgentId, ElementId, Constants.InterAppReceiverPID, interAppCallTimeout, Types.KnownTypes);
-            return internalResults.Select(result => Types.FromMessage(result));
+            myCommands.Messages.AddMessage(messages.Select(InterAppApi.ToMessage).ToArray());
+            var internalResults = myCommands.Send(SLNetConnection, AgentId, ElementId, Constants.InterAppReceiverPID, interAppCallTimeout, InterAppApi.KnownTypes);
+            return internalResults.Select(result => InterAppApi.FromMessage(result));
         }
 
         /// <inheritdoc/>
@@ -62,9 +62,9 @@ namespace Utils.ConnectorAPI.Techex.MWCore
 
             IInterAppCall myCommand = InterAppCallFactory.CreateNew();
             myCommand.ReturnAddress = new ReturnAddress(AgentId, ElementId, Constants.InterAppResponsePID);
-            myCommand.Messages.AddMessage(Types.ToMessage(message));
-            var internalResult = myCommand.Send(SLNetConnection, AgentId, ElementId, Constants.InterAppReceiverPID, interAppCallTimeout, Types.KnownTypes).First();
-            return Types.FromMessage(internalResult);
+            myCommand.Messages.AddMessage(InterAppApi.ToMessage(message));
+            var internalResult = myCommand.Send(SLNetConnection, AgentId, ElementId, Constants.InterAppReceiverPID, interAppCallTimeout, InterAppApi.KnownTypes).First();
+            return InterAppApi.FromMessage(internalResult);
         }
 
         /// <inheritdoc/>

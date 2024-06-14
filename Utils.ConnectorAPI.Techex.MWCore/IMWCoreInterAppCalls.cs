@@ -1,6 +1,6 @@
 ﻿// Ignore Spelling: Utils Techex App
 
-namespace Utils.ConnectorAPI.Techex.MWCore
+namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
 {
     using System;
     using System.Collections.Generic;

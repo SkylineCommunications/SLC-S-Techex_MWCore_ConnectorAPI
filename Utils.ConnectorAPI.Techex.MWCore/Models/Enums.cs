@@ -1,11 +1,11 @@
 ﻿// Ignore Spelling: Techex Utils
 
-namespace Utils.ConnectorAPI.Techex.MWCore.Models
+namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.Models
 {
     /// <summary>
     /// Available SRT Output types
     /// </summary>
-    public enum SRTOutputType
+    public enum SrtOutputType
     {
         /// <summary>
         /// SRT Output is listener type
@@ -21,7 +21,7 @@ namespace Utils.ConnectorAPI.Techex.MWCore.Models
     /// <summary>
     /// Available SRT Source types
     /// </summary>
-    public enum SRTSourceType
+    public enum SrtSourceType
     {
         /// <summary>
         /// SRT Source is listener type

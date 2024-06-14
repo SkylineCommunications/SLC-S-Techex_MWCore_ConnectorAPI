@@ -1,6 +1,6 @@
 ﻿// Ignore Spelling: Utils Techex App
 
-namespace Utils.ConnectorAPI.Techex.MWCore
+namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
 {
     /// <summary>
 	/// Contains constant values used in the ConnectorAPI.
