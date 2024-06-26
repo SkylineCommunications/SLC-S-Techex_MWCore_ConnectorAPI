@@ -97,5 +97,16 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages
 		/// Indicates if the InterApp Call was successful or not
 		/// </summary>
         bool IsSuccessful();
+
+        /// <summary>
+		/// Sets the result from the request made.
+		/// </summary>
+        void SetSuccessResult(bool result);
+
+        /// <summary>
+        /// Generates the <see cref="Message"/> to be sent back via InterApp.
+        /// </summary>
+        /// <returns><see cref="Message"/> with the response from the request.</returns>
+        Message ToMessage();
     }
 }

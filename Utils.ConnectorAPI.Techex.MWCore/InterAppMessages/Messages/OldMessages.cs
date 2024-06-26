@@ -62,11 +62,23 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
         /// Gets or sets the reason the action failed.
         /// </summary>
         public string Error { get; set; }
+        
+        /// <inheritdoc/>
+        public Message ToMessage()
+        {
+            return this;
+        }
 
         /// <inheritdoc/>
         public bool IsSuccessful()
         {
             return SuccessfulCreation;
+        }
+
+        /// <inheritdoc/>
+        public void SetSuccessResult(bool result)
+        {
+            SuccessfulCreation = result;
         }
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages.Messages
 {
+    using Skyline.DataMiner.Core.InterAppCalls.Common.CallSingle;
     using Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore;
 
     /// <summary>
@@ -29,10 +30,22 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages.Me
         /// </summary>
         public string Error { get; set; }
 
+        /// <inheritdoc/>
+        public Message ToMessage()
+        {
+           return new GenericInterAppMessage<MWCoreResponse>(this);
+        }
+
         /// <summary>
-        /// Indicates if the InterApp Call was successful or not
+        /// Indicates if the InterApp Call was successful or not.
         /// </summary>
         public bool IsSuccessful()
         { return Successful; }
+
+        /// <inheritdoc/>
+        public void SetSuccessResult(bool result)
+        {
+            Successful = result;
+        }
     }
 }
