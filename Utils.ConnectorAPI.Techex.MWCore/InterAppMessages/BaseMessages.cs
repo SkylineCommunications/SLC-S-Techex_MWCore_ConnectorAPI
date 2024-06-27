@@ -84,6 +84,11 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages
         string Resource { get; set; }
 
         /// <summary>
+        /// Gets or sets the resource DataMiner primary key.
+        /// </summary>
+        string ResourcePK { get; set; }
+
+        /// <summary>
         /// Gets or sets the Type of resource (Stream/Input/Output).
         /// </summary>
         InterAppResourceType Type { get; set; }

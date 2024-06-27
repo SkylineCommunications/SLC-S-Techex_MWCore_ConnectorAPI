@@ -20,6 +20,9 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages.Me
         /// </summary>
         public string Resource { get; set; }
 
+        /// <inheritdoc/>
+        public string ResourcePK { get; set; }
+
         /// <summary>
         /// Gets or sets the Type of resource (Stream/Input/Output).
         /// </summary>
