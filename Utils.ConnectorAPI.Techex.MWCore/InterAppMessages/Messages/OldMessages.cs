@@ -2,12 +2,14 @@
 
 namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
 {
+    using System;
     using Skyline.DataMiner.Core.InterAppCalls.Common.CallSingle;
     using Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages;
 
     /// <summary>
     /// Message sent to MWCore to create or delete a resource.
     /// </summary>
+    [Obsolete("This object should no longer be used to prevent InterApp DLL related issues. Use the MWCoreInterAppCalls class to send an InterApp message.", false)]
     public class RequestMessage : Message
     {
         /// <summary>
@@ -41,6 +43,7 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
     /// <summary>
     /// Message received from MWCore on request status.
     /// </summary>
+    [Obsolete("This object should no longer be used to prevent InterApp DLL related issues. Use the MWCoreInterAppCalls class to send an InterApp message.", false)]
     public class ResponseMessage : Message, IMWCoreResponse
     {
         /// <summary>

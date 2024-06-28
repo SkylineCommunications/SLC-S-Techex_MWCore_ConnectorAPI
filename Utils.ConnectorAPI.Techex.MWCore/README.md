@@ -48,7 +48,7 @@ var request = new MWCoreRequest
 };
 ```
 
-Send you message to the element.
+Send your message to the element.
 ```csharp
 var response = exampleElement.SendSingleResponseMessage(request);
 ```
