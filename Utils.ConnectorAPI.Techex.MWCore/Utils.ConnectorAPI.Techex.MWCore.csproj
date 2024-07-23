@@ -17,7 +17,7 @@
 		<Authors>SkylineCommunications</Authors>
 		<Company>Skyline Communications</Company>
 		<Description>This NuGet package contains assemblies that enhance development of InterApp communication for the Techex MWCore protocol.
-[Minimum Required Techex MWCore Protocol: 1.0.4.2]</Description>
+[Minimum Required Techex MWCore Protocol: 1.0.4.3]</Description>
 		<RepositoryUrl>https://github.com/SkylineCommunications/SLC-S-Techex_MWCore_ConnectorAPI.git</RepositoryUrl>
 	</PropertyGroup>
 
