@@ -22,7 +22,7 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.Models
 	public class RtpSourceOptions
 	{
 		/// <summary>
-		/// IP Address of the Source. Only show when output type is Pull.
+		/// IP Address of the Source.
 		/// </summary>
 		[JsonProperty("address")]
 		public string Address { get; set; }
