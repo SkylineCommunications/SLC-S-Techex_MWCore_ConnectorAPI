@@ -2,6 +2,8 @@
 
 using Newtonsoft.Json;
 
+using Skyline.DataMiner.Net;
+
 namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.Models
 {
 	/// <summary>
