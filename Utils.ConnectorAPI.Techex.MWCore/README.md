@@ -101,6 +101,19 @@ In order to create an output via InterApp, the request message must contain thes
 > **Note**
 > Only one of the EdgeName or EdgeID properties is required to be filled in.
 
+#### `FullStreams`
+
+In order to create streams with the sources and outputs via InterApp, the request message must contain these properties and values:
+
+- ***Action:*** Create action value.
+- ***Type:*** FullStreams type value.
+- ***EdgeName:*** Edge name where the streams should be created.
+- ***EdgeID:*** Edge ID where the streams should be created.
+- ***Body:*** Full Streams configuration JSON. 
+
+> **Note**
+> Only one of the EdgeName or EdgeID properties is required to be filled in.
+
 ### Delete Action
 
 #### `Stream`

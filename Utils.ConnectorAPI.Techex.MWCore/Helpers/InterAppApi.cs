@@ -5,6 +5,8 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
 	using System;
 	using System.Collections.Generic;
 
+	using global::Utils.ConnectorAPI.Techex.MWCore.Models;
+
 	using Skyline.DataMiner.Core.InterAppCalls.Common.CallSingle;
 	using Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages;
 	using Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages.Messages;
@@ -28,6 +30,11 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
 		/// Output
 		/// </summary>
 		Output,
+
+		/// <summary>
+		/// Represents a batch of streams used in a <see cref="NewStreamsRequest"/>.
+		/// </summary>
+		StreamsBatch,
 	}
 
 	/// <summary>
