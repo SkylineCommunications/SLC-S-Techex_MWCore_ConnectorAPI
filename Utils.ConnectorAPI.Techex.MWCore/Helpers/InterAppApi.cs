@@ -5,11 +5,10 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
 	using System;
 	using System.Collections.Generic;
 
-	using global::Utils.ConnectorAPI.Techex.MWCore.Models;
-
 	using Skyline.DataMiner.Core.InterAppCalls.Common.CallSingle;
 	using Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages;
 	using Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages.Messages;
+	using Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.Models;
 
 	/// <summary>
 	/// Resource type

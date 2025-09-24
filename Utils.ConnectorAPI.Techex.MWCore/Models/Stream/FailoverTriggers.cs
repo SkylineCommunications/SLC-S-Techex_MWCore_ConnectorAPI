@@ -1,6 +1,6 @@
 ﻿// Ignore Spelling: Utils Techex Failover Bitrate
 
-namespace Utils.ConnectorAPI.Techex.MWCore.Models
+namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.Models
 {
 	using Newtonsoft.Json;
 

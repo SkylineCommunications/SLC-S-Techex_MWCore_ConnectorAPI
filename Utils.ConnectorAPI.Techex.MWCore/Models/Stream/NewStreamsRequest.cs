@@ -1,11 +1,9 @@
 ﻿// Ignore Spelling: Utils Techex
 
-namespace Utils.ConnectorAPI.Techex.MWCore.Models
+namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.Models
 {
 	using Newtonsoft.Json;
 	using Newtonsoft.Json.Serialization;
-
-	using Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.Models;
 
 	/// <summary>
 	/// Represents a request to create one or more streams, including their sources and outputs.
