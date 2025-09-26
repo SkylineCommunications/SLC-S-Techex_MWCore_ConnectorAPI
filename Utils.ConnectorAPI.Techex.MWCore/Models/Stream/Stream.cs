@@ -22,6 +22,13 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.Models
 		public string Name { get; set; }
 
 		/// <summary>
+		/// Gets or sets a value indicating whether thumbnails are enabled for the stream.
+		/// </summary>
+
+		[JsonProperty("enableThumbnails")]
+		public bool EnableThumbnails { get; set; }
+
+		/// <summary>
 		/// Gets or sets the options and configuration settings for the stream.
 		/// </summary>
 		[JsonProperty("options")]
