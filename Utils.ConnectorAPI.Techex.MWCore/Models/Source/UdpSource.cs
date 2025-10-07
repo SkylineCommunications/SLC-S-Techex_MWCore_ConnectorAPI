@@ -1,9 +1,8 @@
 ﻿// Ignore Spelling: Utils Techex SSRC Bitrate
-
-using Newtonsoft.Json;
-
 namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.Models
 {
+	using Newtonsoft.Json;
+
 	/// <summary>
 	/// Model to represent the UDP Source
 	/// </summary>

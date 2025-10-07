@@ -8,6 +8,9 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
 	using Skyline.DataMiner.Core.InterAppCalls.Common.CallSingle;
 	using Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages;
 	using Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages.Messages;
+	using Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.Models;
+
+	using Utils.ConnectorAPI.Techex.MWCore.InterAppMessages.Messages;
 
 	/// <summary>
 	/// Resource type
@@ -28,6 +31,11 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
 		/// Output
 		/// </summary>
 		Output,
+
+		/// <summary>
+		/// Represents a batch of streams used in a <see cref="NewStreamsRequest"/>.
+		/// </summary>
+		StreamsBatch,
 	}
 
 	/// <summary>
@@ -67,6 +75,7 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
 			typeof(ResponseMessage),
 			typeof(GenericInterAppMessage<MWCoreRequest>),
 			typeof(GenericInterAppMessage<MWCoreResponse>),
+			typeof(GenericInterAppMessage<StreamsBatchResponse>),
 		};
 
 		/// <summary>
@@ -107,6 +116,9 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
 			switch (message)
 			{
 				case GenericInterAppMessage<MWCoreResponse> requestResult:
+					return requestResult.Data;
+
+				case GenericInterAppMessage<StreamsBatchResponse> requestResult:
 					return requestResult.Data;
 
 				default:
