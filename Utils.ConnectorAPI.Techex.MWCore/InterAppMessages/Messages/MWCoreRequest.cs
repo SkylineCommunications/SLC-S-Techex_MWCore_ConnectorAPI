@@ -10,12 +10,12 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages.Me
 	public class MWCoreRequest : IMWCoreRequest
 	{
 		/// <summary>
-		/// Gets or sets the Action to perform (Create/Delete/Update).
+		/// Gets or sets the Action to perform (Create/Delete/Update/Get).
 		/// </summary>
 		public InterAppAction Action { get; set; }
 
 		/// <summary>
-		/// Gets or sets the Type of resource (Stream/Input/Output).
+		/// Gets or sets the Type of resource (Stream/Input/Output/MWEdge).
 		/// </summary>
 		public InterAppResourceType Type { get; set; }
 

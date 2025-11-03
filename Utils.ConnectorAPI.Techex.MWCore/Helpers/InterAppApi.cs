@@ -36,6 +36,11 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
 		/// Represents a batch of streams used in a <see cref="NewStreamsRequest"/>.
 		/// </summary>
 		StreamsBatch,
+
+		/// <summary>
+		/// MWEdge
+		/// </summary>
+		MWEdge,
 	}
 
 	/// <summary>
@@ -61,7 +66,12 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
 		/// <summary>
 		/// Clear Stats
 		/// </summary>
-		ClearStats
+		ClearStats,
+
+		/// <summary>
+		/// Get
+		/// </summary>
+		Get,
 	}
 
 	/// <summary>
