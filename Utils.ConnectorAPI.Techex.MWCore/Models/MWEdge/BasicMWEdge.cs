@@ -1,4 +1,4 @@
-﻿namespace Utils.ConnectorAPI.Techex.MWCore.Models.MWEdge
+﻿namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.Models.MWEdge
 {
 	using Newtonsoft.Json;
 	using Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.Models;
