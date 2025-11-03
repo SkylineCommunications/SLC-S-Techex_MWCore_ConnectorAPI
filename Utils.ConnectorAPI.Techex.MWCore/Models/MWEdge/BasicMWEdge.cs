@@ -127,7 +127,7 @@
 		/// The time tx edge last logged this state.
 		/// </summary>
 		[JsonProperty("lastLogOccurrence")]
-		public long? LastLogOccurrence { get; set; }
+		public DateTime LastLogOccurrence { get; set; }
 	}
 
 	/// <summary>
