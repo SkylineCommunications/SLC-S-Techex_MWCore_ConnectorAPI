@@ -33,6 +33,11 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages.Me
 		/// </summary>
 		public string Error { get; set; }
 
+		/// <summary>
+		/// Response Body from MWCore.
+		/// </summary>
+		public string Body { get; set; }
+
 		/// <inheritdoc/>
 		public Message ToMessage()
 		{
