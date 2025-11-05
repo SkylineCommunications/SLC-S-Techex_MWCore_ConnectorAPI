@@ -63,11 +63,6 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore
 		public InterAppResourceType Type { get; set; }
 
 		/// <summary>
-		/// Response Body from MWCore.
-		/// </summary>
-		public string Body { get; set; }
-
-		/// <summary>
 		/// Gets or sets the reason the action failed.
 		/// </summary>
 		public string Error { get; set; }

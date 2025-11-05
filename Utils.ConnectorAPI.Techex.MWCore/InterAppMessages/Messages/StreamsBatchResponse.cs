@@ -41,11 +41,6 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages.Me
 		public string Error { get; set; }
 
 		/// <summary>
-		/// Response Body from MWCore.
-		/// </summary>
-		public string Body { get; set; }
-
-		/// <summary>
 		/// Gets or sets the detailed result of the batch operation.
 		/// </summary>
 		public StreamsBatchResult BatchResult { get; set; }

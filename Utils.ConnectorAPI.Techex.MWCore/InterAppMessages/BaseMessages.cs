@@ -99,11 +99,6 @@ namespace Skyline.DataMiner.Utils.ConnectorAPI.Techex.MWCore.InterAppMessages
 		string Error { get; set; }
 
 		/// <summary>
-		/// Response Body from MWCore.
-		/// </summary>
-		string Body { get; set; }
-
-		/// <summary>
 		/// Indicates if the InterApp Call was successful or not
 		/// </summary>
 		bool IsSuccessful();

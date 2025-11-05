@@ -44,6 +44,12 @@
 		/// </summary>
 		[JsonProperty("configuredOutputs")]
 		public List<ConfiguredOutput> ConfiguredOutputs { get; set; }
+
+		/// <summary>
+		/// List of Streams configured on the Edge
+		/// </summary>
+		[JsonProperty("configuredStreams")]
+		public List<ConfiguredStream> ConfiguredStreams { get; set; }
 	}
 
 	/// <summary>
@@ -68,6 +74,24 @@
 		/// </summary>
 		[JsonProperty("state")]
 		public List<ConfigState> State { get; set; }
+	}
+
+	/// <summary>
+	/// Stream Configuration for MWEdge
+	/// </summary>
+	public class ConfiguredStream : Stream
+	{
+		/// <summary>
+		/// List of states for this Stream that may be active or not
+		/// </summary>
+		[JsonProperty("state")]
+		public List<ConfigState> State { get; set; }
+
+		/// <summary>
+		/// ID of the MWEdge the stream is configured on
+		/// </summary>
+		[JsonProperty("mwedge")]
+		public string MWEdge { get; set; }
 	}
 
 	/// <summary>
